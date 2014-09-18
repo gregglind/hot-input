@@ -12,6 +12,17 @@ var phonehome = function (info) {
   console.log("phonehome:", info);
 };
 
+var add_expanded = function (options) {
+  /* var $div = $("<div />").
+    addClass("col-sm-2").
+    addClass("expanded_tile").
+    text("Expanded for " + options.word);
+  */
+    $('#expanded').
+    text("Expanded for " + options.word + " : " +
+      JSON.stringify(options, null, 2));
+};
+
 var input_tile = function (options) {
   var $div = $("<div />").
     addClass("col-sm-1").
@@ -26,6 +37,17 @@ var input_tile = function (options) {
       $(this).addClass('decided')
       .fadeOut();
     });
+
+    $div.hover(
+      function () {
+        add_expanded(options);
+        console.log("hover on", options);
+        $(this).addClass('tall');
+      },
+      function () {
+        $(this).removeClass('tall');
+      }
+    );
   return $div;
 };
 
@@ -131,10 +153,11 @@ var words = [
 ];
 
 $(function () {
-  var d = $("#content");
+  var d = $("#tiles");
   words.forEach(function (k,ii) {
 
-    d.append(input_tile({id: ii, word: k, color: 'red'}));
+    d.append(input_tile({id: ii, word: k, color: 'red',
+      comments: ['Wut?', "Awesome!"]}));
   });
 });
 

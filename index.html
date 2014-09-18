@@ -11,12 +11,27 @@
     margin: 5px;
   }
 
+  #expanded {
+    height: 100%;
+    border-radius: 5px;
+    background-color: orange;
+    color: white;
+    padding: 5px;
+  }
+
+  .tall {
+   /*height: 170px;*/
+  }
+
   .decided {
   }
   </style>
 </head>
 
-<div id="content" />
+<div id="content" class="row">
+  <div id="tiles" class="col-sm-10"></div>
+  <div id="expanded" class="col-sm-2"></div>
+</div>
 <script src="src/thirdparty/jquery.js"></script>
 <script src="main.js"></script>
 </html>
