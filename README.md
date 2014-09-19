@@ -18,11 +18,19 @@ Traits to show:
 
 A 'big board' of events.  Hovering over each gives 'additional notes'.  Clicking on them 'destroys' the event [2].
 
+![screenshot](./screen1.png?raw=true "Big Board Design Image")
+
 
 ## Building
 
 See issue #1.  Right now, 'src/thirdparty' is untracked.  I tend to favor 'bower -> webpack' solutions to dependencies.  For now, get your own copies of the deps!
 
+Needs:  bootstrap.css, jquery.
+
+Will need:  d3, bootstrap.js, cortex, whatever.
+
+
+## Notes
 
 [1] Bestness is a matter of debate, and should reflect:  Reproducible, before and after, clear description, etc.
 
